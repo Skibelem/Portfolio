@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+.hero-background {
+  background-image: url('/Download .png'); /* Adjust the path if necessary */
+  background-position: center; /* Centers the image */
+  /* filter: blur(4px);  */
+  position: absolute; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; /* Send it behind the text */
+}
+
+.text-content {
+  position: relative; /* Keep text above the background */
+  z-index: 1; /* Ensure text is above the blurred background */
+}
+
+/* Ensure full height and width for the Hero section */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-screen {
+  height: 100vh; /* Ensure it takes the full viewport height */
+}
+
+/* navbar */
+
+.nav-container{
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.logo-background img{
+  
+}
