@@ -38,7 +38,7 @@ const Hero = () => {
       </h1>
       <h2
         ref={textRef}
-        className="text-[14px] md:text-4xl mt-4 border-r-2 border-white pr-2 overflow-hidden inline-block whitespace-nowrap"
+        className="text-[12px] md:text-4xl mt-4 border-r-2 border-white pr-2 overflow-hidden inline-block whitespace-nowrap"
       >
         Redefining Web Development with Precision & Passion.
       </h2>
