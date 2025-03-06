@@ -8,7 +8,7 @@ const Footer = () => {
         <h2 className="text-2xl font-bold">&lt;/joe&gt;</h2>
 
         {/* Social Icons */}
-        <div className="flex space-x-4 mt-4 md:mt-0">
+        <div className="flex space-x-4 mt-4 md:ml-24 md:mt-0">
           <a href="#" className="hover:text-yellow-500 transition"><FaFacebook size={24} /></a>
           <a href="#" className="hover:text-yellow-500 transition"><FaTwitter size={24} /></a>
           <a href="#" className="hover:text-yellow-500 transition"><FaLinkedin size={24} /></a>

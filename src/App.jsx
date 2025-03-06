@@ -4,6 +4,7 @@ import Hero from "./Components/Hero";
 import Projects from "./Components/Projects";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
+import Footer from "./Components/Footer"
 import { motion } from "framer-motion";
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
         <Projects />
         <About />
         <Contact />
+        <Footer />
       </motion.div>
   );
 };
