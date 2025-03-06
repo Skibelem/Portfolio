@@ -12,7 +12,7 @@ const Footer = () => {
           <a href="#" className="hover:text-yellow-500 transition"><FaFacebook size={24} /></a>
           <a href="#" className="hover:text-yellow-500 transition"><FaTwitter size={24} /></a>
           <a href="#" className="hover:text-yellow-500 transition"><FaLinkedin size={24} /></a>
-          <a href="#" className="hover:text-yellow-500 transition"><FaGithub size={24} /></a>
+          <a href="https://github.com/Skibelem" className="hover:text-yellow-500 transition"><FaGithub size={24} /></a>
         </div>
 
         {/* Copyright */}

@@ -2,8 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const projects = [
-  { title: "Project 1", link: "#", desc: "A cool project." },
-  { title: "Project 2", link: "#", desc: "Another awesome project." },
+  { title: "Project 1", link: "https://kiateka.netlify.app/", desc: "My first ever project." },
+  { title: "Project 2", link: "https://brainbenchtechnology.netlify.app/", desc: "Another awesome project." },
 ];
 
 const Projects = () => {
