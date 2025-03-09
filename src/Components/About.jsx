@@ -7,7 +7,7 @@ const About = () => {
       <p className="text-gray-600 mt-2">
         Hi, I'm Joel Adelugba {"</joe>"} – a Professional Web Developer with 2+ Years of Experience.
 
-        Over the past 3 years, I’ve helped businesses and individuals bring their ideas to life through modern, scalable, and high-performance web solutions.
+        Over the past 2 years, I’ve helped businesses and individuals bring their ideas to life through modern, scalable, and high-performance web solutions.
 
         What I Do:
 
