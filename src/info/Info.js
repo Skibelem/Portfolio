@@ -1,4 +1,4 @@
-import self from "../img/self.png"
+import Profile from "../img/Profile.png"
 import mock1 from "../img/mock1.png"
 import mock2 from "../img/mock2.png"
 import mock3 from "../img/mock3.png"
@@ -31,7 +31,7 @@ export const info = {
     lastName: "Adelugba",
     initials: "</joe>", // the example uses first and last, but feel free to use three or more if you like.
     position: "a FrontEnd Developer",
-    selfPortrait: self, // don't change this unless you want to name your self-portrait in the "img" folder something else!
+    selfPortrait: Profile, // don't change this unless you want to name your self-portrait in the "img" folder something else!
     gradient: `-webkit-linear-gradient(135deg, ${colors})`, // don't change this either
     baseColor: colors[0],
     miniBio: [ // these are just some "tidbits" about yourself. You can look at mine https://paytonjewell.github.io/#/ for an example if you'd like
