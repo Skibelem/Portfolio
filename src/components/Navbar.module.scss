@@ -4,6 +4,26 @@ nav {
   transition: all 400ms;
   z-index: 1;
   position: relative;
+  padding-bottom: 3.5rem !important; /* Increased space below navbar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (max-width: 768px) {
+  nav {
+    justify-content: space-between;
+  }
+}
+
+.dark .navLinks {
+  color: white;
+}
+
+.dark .navLinks li a {
+  color: white;
 }
 
 .dark {
@@ -20,6 +40,10 @@ nav {
   border-image-slice: 1;
 }
 
+.initialsNavLink.active {
+  border-bottom: none !important;
+}
+
 li {
   transition: $transition;
 
@@ -31,6 +55,12 @@ li {
 
 .link:hover {
   color: unset;
+}
+
+@media (max-width: 768px) {
+  .navLinks li a:hover {
+    color: white !important;
+  }
 }
 
 /* Burger menu icon button */
@@ -79,12 +109,13 @@ li {
     position: absolute;
     top: 3.5rem;
     right: 1rem;
-    background-color: $white;
+    background-color: $dark;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 150px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     padding: 1rem 0;
+    color: white;
   }
 
   .navLinks.open {
@@ -96,6 +127,9 @@ li {
     text-align: center;
   }
 
+  .navLinks li a {
+    color: white;
+  }
 
   .initialsLogo {
     display: block;

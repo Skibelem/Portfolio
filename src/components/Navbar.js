@@ -56,7 +56,7 @@ export default function Navbar({ darkMode, handleClick, active, setActive }) {
     return (
         <Box component={'nav'} width={'100%'} position={singlePage ? 'fixed' : 'relative'} className={darkMode ? Style.dark : Style.light}>
             {/* Initials logo on small screens */}
-            <Box className={Style.initialsLogo} sx={{ display: { xs: 'block', md: 'none' }, color: darkMode ? 'white' : 'black', fontWeight: 'bold', fontSize: '2.5rem', pl: 2, pt: 1 }}>
+            <Box className={Style.initialsLogo} sx={{ display: { xs: 'block', md: 'none' }, color: darkMode ? 'white' : 'black', fontWeight: 'bold', fontSize: '2rem', pl: 2, pt: 1}}>
                 <Link to={singlePage ? "#home" : "/"} scroll={el => scrollWidthOffset(el)} smooth style={{ textDecoration: 'none', color: darkMode ? 'white' : 'black' }}>
                     {info.initials}
                 </Link>
@@ -66,9 +66,9 @@ export default function Navbar({ darkMode, handleClick, active, setActive }) {
                     {burgerOpen ? <CloseIcon /> : <MenuIcon />}
                 </IconButton>
             </Box>
-            <Box component={'ul'} className={`${Style.navLinks} ${burgerOpen ? Style.open : ''}`}>
+            <Box component={'ul'} className={`${Style.navLinks} ${burgerOpen ? Style.open : ''} ${darkMode ? Style.darkNavLinks : ''}`}>
                 {links.map((link, index) => (
-                    <Box key={index} component={'li'} className={(link.active === active) ? Style.active : ''} sx={{ borderImageSource: info.gradient, display: link.type === 'initials' ? { xs: 'none', md: 'block' } : 'block', fontWeight: link.type === 'initials' ? 'bold' : 'normal', fontSize: link.type === 'initials' ? '2.5rem' : '1rem' }}>
+                <Box key={index} component={'li'} className={`${(link.active === active) ? Style.active : ''} ${link.type === 'initials' ? Style.initialsNavLink : ''}`} sx={{ borderImageSource: info.gradient, display: link.type === 'initials' ? { xs: 'none', md: 'block' } : 'block', fontWeight: link.type === 'initials' ? 'bold' : 'normal', fontSize: link.type === 'initials' ? '2.5rem' : '1rem' }}>
                         <Link to={singlePage ? `#${link.to}` : `/${link.to}`} scroll={el => scrollWidthOffset(el)} smooth onClick={() => handleLinkClick(link.active)} className={Style.link}>
                             <p style={{ padding: '0.5rem 0' }}>{link.name}</p>
                         </Link>
