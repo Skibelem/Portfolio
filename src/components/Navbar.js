@@ -1,7 +1,10 @@
+import React, { useState } from 'react';
 import Style from './Navbar.module.scss';
 import Toggler from "./home/Toggler";
 import { HashLink as Link } from 'react-router-hash-link';
-import { Box } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import { info } from "../info/Info";
 import { singlePage } from '../info/Info';
 
@@ -39,21 +42,35 @@ const scrollWidthOffset = (el) => {
 
 
 export default function Navbar({ darkMode, handleClick, active, setActive }) {
+    const [burgerOpen, setBurgerOpen] = useState(false);
+
+    const toggleBurger = () => {
+        setBurgerOpen(!burgerOpen);
+    };
+
+    const handleLinkClick = (linkActive) => {
+        setActive(linkActive);
+        setBurgerOpen(false);
+    };
 
     return (
-        <Box component={'nav'} width={'100%'} position={singlePage ? 'fixed' : 'relative'} className={darkMode? Style.dark : Style.light}>
-            <Box component={'ul'} display={'flex'} justifyContent={'center'} alignItems={'center'}
-                gap={{ xs: '2rem', md: '8rem' }}
-                textTransform={'lowercase'} fontSize={'1rem'}>
+        <Box component={'nav'} width={'100%'} position={singlePage ? 'fixed' : 'relative'} className={darkMode ? Style.dark : Style.light}>
+            {/* Initials logo on small screens */}
+            <Box className={Style.initialsLogo} sx={{ display: { xs: 'block', md: 'none' }, color: darkMode ? 'white' : 'black', fontWeight: 'bold', fontSize: '2.5rem', pl: 2, pt: 1 }}>
+                <Link to={singlePage ? "#home" : "/"} scroll={el => scrollWidthOffset(el)} smooth style={{ textDecoration: 'none', color: darkMode ? 'white' : 'black' }}>
+                    {info.initials}
+                </Link>
+            </Box>
+            <Box className={Style.burgerMenuIcon}>
+                <IconButton onClick={toggleBurger} aria-label="menu" size="large" sx={{ color: darkMode ? 'white' : 'black' }}>
+                    {burgerOpen ? <CloseIcon /> : <MenuIcon />}
+                </IconButton>
+            </Box>
+            <Box component={'ul'} className={`${Style.navLinks} ${burgerOpen ? Style.open : ''}`}>
                 {links.map((link, index) => (
-                    <Box key={index} component={'li'} className={(link.active === active && !link.type) && Style.active}
-                        sx={{ borderImageSource: info.gradient }}>
-                        <Link to={singlePage ? `#${link.to}` : `/${link.to}`}
-                        scroll={el => scrollWidthOffset(el)}
-                            smooth
-                            onClick={() => setActive(link.active)} className={Style.link}>
-                            {!link.type && <p style={{ padding: '0.5rem 0' }}>{link.name}</p>}
-                            {link.type && <h1>{link.name}</h1>}
+                    <Box key={index} component={'li'} className={(link.active === active) ? Style.active : ''} sx={{ borderImageSource: info.gradient, display: link.type === 'initials' ? { xs: 'none', md: 'block' } : 'block', fontWeight: link.type === 'initials' ? 'bold' : 'normal', fontSize: link.type === 'initials' ? '2.5rem' : '1rem' }}>
+                        <Link to={singlePage ? `#${link.to}` : `/${link.to}`} scroll={el => scrollWidthOffset(el)} smooth onClick={() => handleLinkClick(link.active)} className={Style.link}>
+                            <p style={{ padding: '0.5rem 0' }}>{link.name}</p>
                         </Link>
                     </Box>
                 ))}
@@ -62,5 +79,5 @@ export default function Navbar({ darkMode, handleClick, active, setActive }) {
                 </li>
             </Box>
         </Box>
-    )
+    );
 }
