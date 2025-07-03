@@ -1,7 +1,6 @@
 {
-  "homepage": "https://Skibelem.github.io/Portfolio",
-  "name": "portfolioTemplate",
-  "version": "2.0.0",
+  "name": "joelverse",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.0",
