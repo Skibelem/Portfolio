@@ -41,7 +41,7 @@ export const info = {
         },
         {
             emoji: '🌎',
-            text: 'based in the Nigeria'
+            text: 'based in Nigeria'
         },
         {
             emoji: "💼",
